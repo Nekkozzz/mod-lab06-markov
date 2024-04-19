@@ -31,7 +31,7 @@ std::string generator::generate_text(int length, unsigned int seed) {
     return res;
 }
 
-void generator::set_map(std::map<prefix, std::vector<std::string> > _map) 
+void generator::set_map(std::map<prefix, std::vector<std::string> > _map)
     { map = _map; }
 std::map<prefix, std::vector<std::string> > generator::get_map()
     { return map; }

@@ -17,7 +17,7 @@ TEST(test2, suffix) {
     std::istringstream str("audaces fortuna juvat");
     gen.train(str, 2);
     std::map<prefix, std::vector<std::string> > map = gen.get_map();
-    std::vector<std::string> > exp = { "juvat" };
+    std::vector<std::string> exp = { "juvat" };
     EXPECT_EQ(exp, map.begin()->second);
 }
 
@@ -35,7 +35,7 @@ TEST(test4, multiple) {
     gen.train(str, 1);
     prefix pr = { "ut" }
     std::map<prefix, std::vector<std::string> > map = gen.get_map();
-    std::vector<std::string> > exp = { "vivamus", "edamus" };
+    std::vector<std::string> exp = { "vivamus", "edamus" };
     EXPECT_EQ(exp, map.at(pr));
 }
 
