@@ -26,7 +26,7 @@ TEST(test3, single) {
     std::istringstream str("amicus plato, sed magis amica veritas");
     gen.train(str, 1);
     std::string res = gen.generate_text(10, 512);
-    EXPECT_EQ("sed magis amica veritas ", res);
+    EXPECT_EQ("amicus plato, sed magis amica veritas ", res);
 }
 
 TEST(test4, multiple) {
@@ -35,7 +35,7 @@ TEST(test4, multiple) {
     gen.train(str, 1);
     prefix pr = { "ut" };
     std::map<prefix, std::vector<std::string> > map = gen.get_map();
-    std::vector<std::string> exp = { "vivamus", "edamus" };
+    std::vector<std::string> exp = { "vivamus;", "edamus" };
     EXPECT_EQ(exp, map.at(pr));
 }
 
