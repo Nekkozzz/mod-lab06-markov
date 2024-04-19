@@ -1,3 +1,5 @@
+// Copyright 2024 Nekkozzz
+
 #include "textgen.h"
 
 void generator::train(std::istream &source, int prefix_size) {
@@ -12,9 +14,8 @@ void generator::train(std::istream &source, int prefix_size) {
     }
 }
 
-std::string generator::generate_text(int length) {
+std::string generator::generate_text(int length, unsigned int seed) {
     auto map_it = map.begin();
-    unsigned int seed = (unsigned int)time(NULL);
     std::advance(map_it, rand_r(&seed) % map.size());
     prefix prefix = map_it->first;
     std::string res;
@@ -30,5 +31,7 @@ std::string generator::generate_text(int length) {
     return res;
 }
 
-void generator::set_map(std::map<prefix, std::vector<std::string> > _map) { map = _map; }
-std::map<prefix, std::vector<std::string> > generator::get_map() { return map; }
+void generator::set_map(std::map<prefix, std::vector<std::string> > _map) 
+    { map = _map; }
+std::map<prefix, std::vector<std::string> > generator::get_map()
+    { return map; }

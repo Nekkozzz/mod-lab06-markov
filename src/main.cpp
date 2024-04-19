@@ -1,10 +1,11 @@
+// Copyright 2024 Nekkozzz
+
 #include "textgen.h"
 
 const int NPREF = 2;
 const int MAXGEN = 1000;
 
 int main() {
-    srand(time(NULL));
     generator gen;
     std::ifstream file("text.txt");
     gen.train(file, NPREF);
