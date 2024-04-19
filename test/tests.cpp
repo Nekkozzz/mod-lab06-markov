@@ -46,6 +46,7 @@ TEST(test5, custom_table) {
         { { "two" }, { "three", "four" } },
         { { "three" }, { "five" } },
     };
+    gen.setmap(map);
     std::string res = gen.generate_text(10, 512);
     EXPECT_EQ("two four ", res);
 }
