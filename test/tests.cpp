@@ -33,7 +33,7 @@ TEST(test4, multiple) {
     generator gen;
     std::istringstream str("edimus, ut vivamus; non vivimus, ut edamus");
     gen.train(str, 1);
-    prefix pr = { "ut" }
+    prefix pr = { "ut" };
     std::map<prefix, std::vector<std::string> > map = gen.get_map();
     std::vector<std::string> exp = { "vivamus", "edamus" };
     EXPECT_EQ(exp, map.at(pr));
@@ -45,7 +45,7 @@ TEST(test5, custom_table) {
         { { "one" }, { "two" } },
         { { "two" }, { "three", "four" } },
         { { "three" }, { "five" } },
-    }
+    };
     std::string res = gen.generate_text(10, 512);
     EXPECT_EQ("two four ", res);
 }
